@@ -1,0 +1,36 @@
+.rightbox {
+    position: fixed;
+    right: 0px;
+    width: 487px;
+    height: 750px;
+    background-color: rgb(255, 115, 0);
+    border:solid #000000 ;
+    border-top: 0 10px;
+    border-width: 0 10px;
+
+}
+
+.leftbox {
+    position: fixed;
+    left: 0px;
+    width: 488px;
+    height: 750px;
+    background-color: rgb(255, 115, 0);
+    border:solid #000000 ;
+    border-width: 0 10px;
+}
+
+.center-screen {
+    position: absolute;
+    background-color: rgb(160, 48, 20);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 410px;
+    height: 800px;
+}

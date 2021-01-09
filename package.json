@@ -1,0 +1,16 @@
+{
+  "name": "urlshortner",
+  "version": "1.0.0",
+  "description": "A url shortner website and REST API",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "mehtaarn000",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.7"
+  }
+}
