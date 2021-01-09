@@ -67,7 +67,7 @@ app.post('/api/urlshorten', function(req, res){
     parseJson[randomID] = postJsonData["url"]
     const JSONDATA = JSON.stringify(parseJson)
     fs.writeFileSync("db.json", JSONDATA)
-    const response = `{"${parseJson[randomID]}": "${randomID}"}\n`
+    const response = `{"${randomID}": "${parseJson[randomID]}"}\n`
     res.send(response)
 });
 
