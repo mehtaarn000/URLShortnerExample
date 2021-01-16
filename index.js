@@ -21,7 +21,7 @@ app.use(bodyParser());
 
 //Main route
 app.get("/", function(req, res){
-    res.send(path.join(__dirname + "/views/home.html"));
+    res.send(path.join(__dirname + "/views/index.html"));
 })
 
 //For form
