@@ -1,11 +1,8 @@
 //modules
 const express = require('express');
-const fs = require("fs")
+const bodyParser = require('body-parser'); 
 const app = express();
-const bodyParser = require('body-parser');
-
-//Render html
-const html = fs.readFileSync("html/home.html").toString("utf8")
+const path = require("path")
 
 //To generate random urls
 function makeid(length) {
@@ -19,11 +16,10 @@ function makeid(length) {
 }
 
 app.use(bodyParser());
-app.use(express.static(__dirname + '/html'));
 
 //Main route
 app.get("/", function(req, res){
-    res.send(html);
+    res.send(path.join(__dirname + "/html/home.html"));
 })
 
 //For form
