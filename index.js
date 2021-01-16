@@ -52,6 +52,7 @@ app.get("/:id", function(req, res){
 })
 
 //To use the REST api
+//POST data should be a JSON string such as this: '{"url": "https://example.com"}'
 app.post('/api/urlshorten', function(req, res){
     const postJsonData = req.body
     const url = postJsonData["url"]
