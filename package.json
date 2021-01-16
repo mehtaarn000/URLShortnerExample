@@ -4,13 +4,12 @@
   "description": "A url shortner website and REST API",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server"
+    "start": "node index.js"
   },
   "author": "mehtaarn000",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "lite-server": "^2.6.1",
-    "nodemon": "^2.0.7"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
   }
 }
