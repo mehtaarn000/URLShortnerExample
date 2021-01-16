@@ -1,7 +1,7 @@
 //modules
 const express = require('express');
-const bodyParser = require('body-parser'); 
-const app = express();
+const bodyParser = require('body-parser');
+const fs = require("fs")
 const path = require("path")
 
 //To generate random urls
@@ -15,11 +15,13 @@ function makeid(length) {
     return result;
 }
 
+//App config
+const app = express();
 app.use(bodyParser());
 
 //Main route
 app.get("/", function(req, res){
-    res.send(path.join(__dirname + "/html/home.html"));
+    res.send(path.join(__dirname + "/views/home.html"));
 })
 
 //For form
