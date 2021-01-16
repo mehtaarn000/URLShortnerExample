@@ -15,7 +15,7 @@ Then, install dependencies:
 
 ## Usage
 
-Run `nodemon index.js` or `npm run start` to start the server, and head to [http://localhost:3000](http://localhost:3000) in your webbrowser.
+Run `node index.js` or `npm run start` to start the server, and head to [http://localhost:3000](http://localhost:3000) in your webbrowser.
 
 Input a url, and the server will return a randomly chosen id and url to you. Go to that given url, and voila! You will be redirected to that website.
 
