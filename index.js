@@ -18,10 +18,12 @@ function makeid(length) {
 //App config
 const app = express();
 app.use(bodyParser());
+app.set("view options", {layout: false})
+app.use(express.static(__dirname + "/views"))
 
 //Main route
 app.get("/", function(req, res){
-    res.send(path.join(__dirname + "/views/index.html"));
+    res.render("/views/index.html");
 })
 
 //For form
@@ -66,7 +68,7 @@ app.post('/api/urlshorten', function(req, res){
     parseJson[randomID] = postJsonData["url"]
     const JSONDATA = JSON.stringify(parseJson)
     fs.writeFileSync("db.json", JSONDATA)
-    const response = `{"${randomID}": "${parseJson[randomID]}"}\n`
+    const response = `{"${randomID}": "${parseJson[randomID]}"}`
     res.send(response)
 });
 
