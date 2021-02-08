@@ -17,7 +17,9 @@ Then, install dependencies:
 
 Run `node index.js` or `npm run start` to start the server, and head to [http://localhost:3000](http://localhost:3000) in your webbrowser.
 
-Input a url, and the server will return a randomly chosen id and url to you. Go to that given url, and voila! You will be redirected to that website.
+To test redirects, go to [http://localhost:3000/example](http://localhost:3000/example) in your webbrowser. You should be redirected to [https://amazon.com](https://amazon.com).
+
+Or, input a url, and the server will return a randomly chosen id and url to you. Go to that given url, and voila!
 
 ## API usage
 
