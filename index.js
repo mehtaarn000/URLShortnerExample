@@ -1,10 +1,9 @@
-//modules
+//Required packages
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require("fs")
-const path = require("path")
 
-//To generate random urls
+//To generate random url ids
 function makeid(length) {
     let result           = '';
     const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -26,7 +25,7 @@ app.get("/", function(req, res){
     res.render("/views/index.html");
 })
 
-//For form
+//Main route for form
 app.post("/", function(req, res){
     const url = req.body.givenurl
     const jsonContent = fs.readFileSync("db.json")
@@ -39,7 +38,7 @@ app.post("/", function(req, res){
     res.send(newurl)
 })
 
-//For each url
+//For redirects
 app.get("/:id", function(req, res){
     const database = fs.readFileSync("db.json")
     const dbparse = JSON.parse(database)
@@ -55,6 +54,7 @@ app.get("/:id", function(req, res){
 
 //To use the REST api
 //POST data should be a JSON string such as this: '{"url": "https://example.com"}'
+//'https' is required as scheme
 app.post('/api/urlshorten', function(req, res){
     const url = req.body.url
     if (url === undefined){
