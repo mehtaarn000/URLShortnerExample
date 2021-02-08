@@ -21,11 +21,11 @@ To test redirects, go to [http://localhost:3000/example](http://localhost:3000/e
 
 Or, input a url, and the server will return a randomly chosen id and url to you. Go to that given url, and voila!
 
-## API usage
+## REST API usage
 
 Run a post request with curl to the server, for example:
 
 `curl --header "Content-Type: application/json"   --request POST   --data '{"url":"https://google.com"}' http://localhost:3000/api/urlshorten`
 
-The API should return a JSON object with your url. Go to the url and you will again be redirected.
+The API should return a JSON object with your url. Go to the url and you will be redirected.
 
