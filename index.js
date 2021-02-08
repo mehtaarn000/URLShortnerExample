@@ -56,16 +56,21 @@ app.get("/:id", function(req, res){
 //To use the REST api
 //POST data should be a JSON string such as this: '{"url": "https://example.com"}'
 app.post('/api/urlshorten', function(req, res){
-    const postJsonData = req.body
-    const url = postJsonData["url"]
+    const url = req.body.url
     if (url === undefined){
-        res.send('{"message": "invalid JSON data"}')
+        res.json({message: "invalid JSON data"})
         return
     }
+
+    if (!url.includes("https://")) {
+        res.json({message: "url must have 'https' as scheme"})
+        return
+    }
+
     const jsonContent = fs.readFileSync("db.json")
     const parseJson = JSON.parse(jsonContent)
     const randomID = makeid(7)
-    parseJson[randomID] = postJsonData["url"]
+    parseJson[randomID] = url
     const JSONDATA = JSON.stringify(parseJson)
     fs.writeFileSync("db.json", JSONDATA)
     const response = `{"${randomID}": "${parseJson[randomID]}"}`
